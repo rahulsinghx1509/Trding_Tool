@@ -16,6 +16,9 @@
 - Scan frequency: Every 30 seconds
 - Capital reference: INR 10,000
 - Re-entry cap: 1
+- Daily max loss: both, whichever hits first
+  - INR 500
+  - 5% of capital
 - Premium stop loss: 25%
 - Spot stop loss: Signal candle invalidation level
 - Fixed target: 30%
@@ -23,6 +26,7 @@
 - Profit lock: 10%
 - Time exit: 3:10 PM
 - Expiry selection: Smart choice using liquidity + premium behavior + distance to expiry
+- Strike selection: Smart strike selection using premium + liquidity + distance from spot
 - Timeframe logic: Multi-timeframe
   - 5-minute for structure/trend
   - 1-minute for trigger
@@ -60,7 +64,7 @@
    - premium-based SL
    - spot invalidation SL
    - re-entry cap
-   - daily max loss guard (final threshold pending)
+   - daily max loss guard
    - time-based forced exit
    - target and trailing-profit logic
 
@@ -81,10 +85,8 @@
 
 ## Open items still to lock
 
-- exact daily max loss rule
 - exact score thresholds for SELL_CE / SELL_PE / NO_TRADE / EXIT
 - signal candle definition
-- strike selection method
 - news source/API
 - market data source/API details from Angel One
 - Telegram bot wiring details
