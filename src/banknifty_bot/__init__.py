@@ -1,0 +1,1 @@
+"""BankNifty alert bot package."""
